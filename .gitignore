@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+## Security
+SpeedSyncAPI.p12
+SpeedSyncAPI.pem
