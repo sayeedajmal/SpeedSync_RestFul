@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/sayeedajmal/SpeedSync_RestFul-API/actions/workflows/maven.yml/badge.svg)](https://github.com/sayeedajmal/SpeedSync_RestFul-API/actions/workflows/maven.yml)
+
 # EndPoints
 
     - api/v1/vehicles
