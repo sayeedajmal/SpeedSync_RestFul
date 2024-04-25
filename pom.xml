@@ -14,7 +14,7 @@
 	<name>SpeedSync Restful Api</name>
 	<description>Restful Api for SpeedSync Dashboard</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
