@@ -6,7 +6,7 @@ FROM openjdk:17-jdk-alpine
 WORKDIR /app
 
 # Copy the Maven project JAR file into the container
-COPY target/speedsync-restful-1.0.jar /app/speedsync-restful.jar
+COPY target/speedsync-restful-1.0.jar speedsync-restful.jar
 
 # Expose the port your Spring Boot application runs on
 EXPOSE 8080
