@@ -83,4 +83,12 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>com.strong</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/sayeedajmal/SpeedSync_RestFul-API</url>
+		</repository>
+	</distributionManagement>
+
 </project>
