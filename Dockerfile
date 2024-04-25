@@ -1,15 +1,14 @@
-# Use an existing Java base image
-FROM openjdk:17-jdk-alpine
-
+# Use the official OpenJDK 17 image as base image
+FROM openjdk:17-jdk-slim
 
 # Set the working directory in the container
-WORKDIR /
+WORKDIR /app
 
-# Copy the Maven project JAR file into the container
-COPY target/speedsync-restful-1.0.jar /speedsync-restful.jar
+# Copy the packaged JAR file into the container
+COPY target/speedsync-restful-1.0.jar /app/app.jar
 
-# Expose the port your Spring Boot application runs on
+# Expose the port the application runs on
 EXPOSE 8080
 
-# Command to run the Spring Boot application
-CMD ["java", "-jar", "speedsync-restful.jar"]
+# Command to run the application
+CMD ["java", "-jar", "app.jar"]
