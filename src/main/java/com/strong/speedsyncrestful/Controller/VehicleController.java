@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.strong.speedsyncrestful.Entity.Vehicle;
+import com.strong.speedsyncrestful.Exception.SpeedSyncException;
 import com.strong.speedsyncrestful.Service.VehicleService;
 
 @RestController
@@ -19,8 +20,8 @@ public class VehicleController {
     private VehicleService vehicleService;
 
     @PostMapping("challan")
-    public ResponseEntity<Void> regVehicles(@RequestBody Vehicle vehicle) {
-        vehicleService.regVehicle(vehicle);
+    public ResponseEntity<Void> generateChallan(@RequestBody Vehicle vehicle) throws SpeedSyncException {
+        vehicleService.challanSave(vehicle);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }

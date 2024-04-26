@@ -1,11 +1,10 @@
 package com.strong.speedsyncrestful.Service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.strong.speedsyncrestful.Entity.Vehicle;
+import com.strong.speedsyncrestful.Exception.SpeedSyncException;
 import com.strong.speedsyncrestful.Repository.VehicleRepo;
 
 import lombok.NonNull;
@@ -16,12 +15,13 @@ public class VehicleService {
     @Autowired
     private VehicleRepo vehicleRepo;
 
-    public void regVehicle(@NonNull Vehicle vehicle) {
+    public void challanSave(@NonNull Vehicle vehicle) throws SpeedSyncException {
         vehicle.setTimestamp(System.currentTimeMillis());
-        vehicleRepo.save(vehicle);
+        try {
+            vehicleRepo.save(vehicle);
+        } catch (Exception ex) {
+            throw new SpeedSyncException("Failed to Generate Challan: " + ex.getMessage());
+        }
     }
 
-    public List<Vehicle> getVehicles() {
-        return vehicleRepo.findAll();
-    }
 }
