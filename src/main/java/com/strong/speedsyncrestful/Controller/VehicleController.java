@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.strong.speedsyncrestful.Entity.Vehicle;
 import com.strong.speedsyncrestful.Exception.SpeedSyncException;
+import com.strong.speedsyncrestful.Service.MailService;
 import com.strong.speedsyncrestful.Service.VehicleService;
 
 @RestController
@@ -18,10 +19,13 @@ public class VehicleController {
 
     @Autowired
     private VehicleService vehicleService;
+    @Autowired
+    private MailService mailService;
 
     @PostMapping("challan")
     public ResponseEntity<Void> generateChallan(@RequestBody Vehicle vehicle) throws SpeedSyncException {
         vehicleService.challanSave(vehicle);
+        mailService.sendEmail(vehicle.getEmail(), vehicle);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }

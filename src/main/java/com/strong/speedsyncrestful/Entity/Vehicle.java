@@ -21,6 +21,7 @@ public class Vehicle {
     private Map<String, Object> vehicleDetails;
     private Location location;
     private int currentSpeed;
+    private String email;
     private String highway;
 
     private long timestamp;
