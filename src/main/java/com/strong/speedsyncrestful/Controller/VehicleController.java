@@ -25,7 +25,7 @@ public class VehicleController {
     @PostMapping("challan")
     public ResponseEntity<Void> generateChallan(@RequestBody Vehicle vehicle) throws SpeedSyncException {
         vehicleService.challanSave(vehicle);
-        mailService.sendEmail(vehicle.getEmail(), vehicle);
+        mailService.sendEmail(vehicle);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }

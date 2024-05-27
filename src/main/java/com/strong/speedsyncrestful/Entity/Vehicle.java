@@ -18,12 +18,11 @@ public class Vehicle {
 
     @Indexed(direction = IndexDirection.ASCENDING)
     private String carNumber;
-    private Map<String, Object> vehicleDetails;
-    private Location location;
-    private int currentSpeed;
     private String email;
     private String highway;
-
+    private float currentSpeed;
+    private Location location;
+    private Map<String, Object> vehicleDetails;
     private long timestamp;
 
 }
